@@ -5,15 +5,9 @@ import React from 'react'
 
 
 
-async function getData() {
-  if (!mongoose.connections[0].readyState) {
-          await mongoose.connect(process.env.MOURL);
-        }
-        let res = await Product.find();
-return res
-}
 
-const Allcakes = async() => {
+
+const allcakes = async() => {
 
   let data = await getData()
 
@@ -45,4 +39,4 @@ return(
   )
 }
 
-export default Allcakes
+export default allcakes
