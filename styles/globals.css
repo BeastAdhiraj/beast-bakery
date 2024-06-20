@@ -1,6 +1,7 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+@import url('https://fonts.googleapis.com/css2?family=Sevillana&display=swap');
 
 :root {
   --foreground-rgb: 0, 0, 0;
@@ -17,7 +18,7 @@
 }
 
 body {
-  color: rgb(var(--foreground-rgb));
+  color:black;
   background: linear-gradient(
       to bottom,
       transparent,
@@ -30,4 +31,10 @@ body {
   .text-balance {
     text-wrap: balance;
   }
+}
+
+.sevillana-regular {
+  font-family: "Sevillana", cursive;
+  font-weight: 400;
+  font-style: normal;
 }
