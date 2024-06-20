@@ -7,9 +7,7 @@ import React from 'react'
 
 
 
-const allcakes = async() => {
-
-  let data = await getData()
+const allcakes = () => {
 
     // const [cakes, setcakes] = useState({img:["https://3.bp.blogspot.com/-9ZWCSd0fRi0/TtazEFzSXGI/AAAAAAAARkM/0yrh02qG4Z4/s1600/P1040632.jpg","https://th.bing.com/th/id/OIP.DMt2rOpk5ugpr8B3GmRJFQAAAA?w=474&h=474&rs=1&pid=ImgDetMain","https://th.bing.com/th/id/OIP.qlcCerkbnNl7x5Ww-5y9jAHaH8?rs=1&pid=ImgDetMain","https://cdn.giftstoindia24x7.com/ASP_Img/IMG2000/GTI0197.jpg?imgeng=w_1200"]})
 
