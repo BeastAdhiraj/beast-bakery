@@ -4,8 +4,7 @@ import mongoose from 'mongoose';
 import React, { useState } from 'react'
 
 
-const Allcakes = () => {
-  const [cakes, setcakes] = useState({img:["https://3.bp.blogspot.com/-9ZWCSd0fRi0/TtazEFzSXGI/AAAAAAAARkM/0yrh02qG4Z4/s1600/P1040632.jpg","https://th.bing.com/th/id/OIP.DMt2rOpk5ugpr8B3GmRJFQAAAA?w=474&h=474&rs=1&pid=ImgDetMain","https://th.bing.com/th/id/OIP.qlcCerkbnNl7x5Ww-5y9jAHaH8?rs=1&pid=ImgDetMain","https://cdn.giftstoindia24x7.com/ASP_Img/IMG2000/GTI0197.jpg?imgeng=w_1200"]})
+const Allcakes = (products) => {
 
   return (
     <>
@@ -14,10 +13,10 @@ const Allcakes = () => {
           <div className="mx-auto max-w-2xl px-4 sm:py-10 h-full sm:px-6 lg:max-w-7xl lg:px-8 ">
 
       <div className=" mt-6 grid mb-16 grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-2 lg:grid-cols-4 xl:gap-x-8 "> 
-        {Object.keys(cakes) && Object.keys(cakes).map((i,x)=>{
+        {Object.keys(products.products) && Object.keys(products.products).map((i,x)=>{
 return(
 <div key={x} className="d">
-  <Cards img={cakes.img[i]}/>
+  <Cards name={products.products[i].title} img={products.products[i].img} price={products.products[i].price} weight={products.products[i].weight} slug={products.products[i].slug}/>
 </div>
 
 )
@@ -34,3 +33,14 @@ return(
 }
 
 export default Allcakes
+export async function getServerSideProps() {
+  if (!mongoose.connections[0].readyState) {
+    await mongoose.connect(process.env.MOURL);
+  }
+  let products = await Product.find({ category: "cake" });
+
+    
+  return {
+    props: { products: JSON.parse(JSON.stringify(products)) },
+  };
+}

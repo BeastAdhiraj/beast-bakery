@@ -9,12 +9,7 @@ export default function Home() {
   return (
   <>
   <SpotlightPreview/>
-
-
-<h1 className="text-center text-white mb-2 text-2xl sm:text-3xl sevillana-regular mt-2"> Wellcome TO Bakery</h1>
- 
-
-
+<h1 className="text-center text-white mb-4 text-2xl sm:text-3xl sevillana-regular mt-2 "> Wellcome TO Bakery</h1>
 <Catelog/>
   </>
   );

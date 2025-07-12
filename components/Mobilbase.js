@@ -30,7 +30,7 @@ seted(!ed)
       </ul>
         </Link>
 
-<Link href={'/addCakes'} className='cursor-pointer'>
+<Link href={'/addcakes'} className='cursor-pointer'>
       <ul  className="flex  flex-col items-center justify-center ">
       <MdOutlineDashboardCustomize  className='text-xl  text-center dark:text-white'  />
         <li >
