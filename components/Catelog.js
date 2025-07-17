@@ -2,8 +2,8 @@ import React from 'react'
 import Link from 'next/link'
 
 const Catelog = () => {
-  let vids = ["/rcv1.mp4","/rcv2.mp4"]
-  let pics = ["/rcv3.webp","/rcv4.webp"]
+  let vids = ["/rcv.mp4","/rcv2.mp4"]
+  let pics = ["/rcv3.webp","/rcv4.jpg"]
   return (
     <>
      <div className="grid grid-col grid-rows-3   gap-1 sm:gap-4  justify-center gap-y-6    ">
@@ -50,7 +50,7 @@ return(<div key={i} className="aspect-[9/16] overflow-hidden rounded-xl shadow-l
           <img
             src={`${pics[x]}`}
             alt={`Bakery Pic ${x}`}
-            className="w-full h-full object-cover"
+            className="w-full h-full  object-center p-2"
           />
         </div>
       )}
